@@ -1,0 +1,22 @@
+# Core Python Libraries
+numpy==1.24.3         # For numerical computations
+pandas==1.5.3         # For data manipulation and analysis
+scipy==1.10.1         # For scientific computing
+
+# Machine Learning/AI Libraries
+scikit-learn==1.2.0   # For machine learning algorithms
+tensorflow==2.12.0    # For deep learning (you can replace with PyTorch if preferred)
+torch==2.0.1          # For PyTorch (optional)
+
+# Visualization
+matplotlib==3.7.1     # For creating static, animated, and interactive visualizations
+seaborn==0.12.2       # For statistical data visualization
+
+# Web Framework (if applicable)
+flask==2.3.2          # For building web applications (optional)
+django==4.2.1         # For building web applications (optional)
+
+# Others
+requests==2.31.0      # For making HTTP requests
+beautifulsoup4==4.12.2  # For web scraping (if applicable)
+pytest==7.4.0         # For testing framework
