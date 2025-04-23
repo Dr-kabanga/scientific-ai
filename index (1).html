@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United States of Africa Organization</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Revolution AI SDK -->
+  <script src="https://cdn.revolutionai.com/sdk/revolutionai.min.js"></script>
+  <!-- SDK Fallback: define stub if SDK fails to load -->
+  <script>
+    if (typeof RevolutionAI === 'undefined') {
+      console.warn('RevolutionAI SDK not found; using fallback stub.');
+      window.RevolutionAI = {
+        Client: class {
+          constructor(options) {
+            this.container = document.getElementById(options.element);
+            this.container.innerHTML = '<div class="text-gray-500 italic">[AI Assistant unavailable: running stub]</div>';
+          }
+          appendUserMessage(msg) {
+            const el = document.createElement('div');
+            el.className = 'text-right text-indigo-800 mt-2';
+            el.textContent = 'You: ' + msg;
+            this.container.appendChild(el);
+          }
+          async send(msg) {
+            return Promise.resolve('[Stub reply] "' + msg + '"');
+          }
+          appendBotMessage(msg) {
+            const el = document.createElement('div');
+            el.className = 'text-left text-gray-800 mt-2';
+            el.textContent = 'AI: ' + msg;
+            this.container.appendChild(el);
+          }
+        }
+      };
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-6">
+          <a href="#" class="text-xl font-bold">USAFiO</a>
+          <a href="#about" class="hover:text-indigo-600">About</a>
+          <a href="#structure" class="hover:text-indigo-600">Structure</a>
+          <a href="#quantum-craft" class="hover:text-indigo-600">Quantum Craft</a>
+          <a href="#quantum-train" class="hover:text-indigo-600">Quantum Train</a>
+          <a href="#learning-platform" class="hover:text-indigo-600">Learning</a>
+          <a href="#ai" class="hover:text-indigo-600">AI Assistant</a>
+          <a href="#contact" class="hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button id="loginBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Member Login</button>
+          <button id="zafaLoginBtn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">ZAFA Login</button>
+          <a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-indigo-600 text-white py-20 text-center">
+    <h1 class="text-4xl font-extrabold mb-4">United States of Africa Organization</h1>
+    <p class="text-lg">Interactive AI Platform for Quantum Engineering, Research & Leadership</p>
+  </header>
+
+  <div class="flex-grow">
+    <main class="max-w-5xl mx-auto px-4 py-12 space-y-16">
+
+      <!-- About -->
+      <section id="about">
+        <h2 class="text-3xl font-bold mb-4">About USAFiO</h2>
+        <p>We unite African nations to advance quantum engineering, space research, and AI-driven innovation. Our platform empowers members with interactive tools, collaboration spaces, and role-based resources.</p>
+      </section>
+
+      <!-- Organization Structure -->
+      <section id="structure" class="bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-4">Members, Roles & Qualifications</h2>
+        <p class="mb-6">Explore our organizational hierarchy, role requirements, and specialization tracks.</p>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-gray-100 rounded-lg">
+            <thead class="bg-indigo-600 text-white">
+              <tr>
+                <th class="px-4 py-2">Role</th>
+                <th class="px-4 py-2">Description</th>
+                <th class="px-4 py-2">Qualifications</th>
+                <th class="px-4 py-2">Default Rank</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-800">
+              <tr class="border-b">
+                <td class="px-4 py-2">Quantum Researcher</td>
+                <td class="px-4 py-2">Leads theoretical & experimental quantum studies.</td>
+                <td class="px-4 py-2">PhD in Physics or Quantum Engineering</td>
+                <td class="px-4 py-2">Major</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="px-4 py-2">Systems Engineer</td>
+                <td class="px-4 py-2">Designs and integrates spacecraft subsystems.</td>
+                <td class="px-4 py-2">MSc in Aerospace/Electrical Engineering</td>
+                <td class="px-4 py-2">Captain</td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-4 py-2">AI Developer</td>
+                <td class="px-4 py-2">Builds AI models & data pipelines for research.</td>
+                <td class="px-4 py-2">BSc/MSc in Computer Science or ML</td>
+                <td class="px-4 py-2">Lieutenant</td>
+              </tr>
+              <tr class="border-b bg-gray-50">
+                <td class="px-4 py-2">Policy Advisor</td>
+                <td class="px-4 py-2">Drafts strategic guidelines and governance policies.</td>
+                <td class="px-4 py-2">Master’s in Policy/International Relations</td>
+                <td class="px-4 py-2">Colonel</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">ZAFA Officer</td>
+                <td class="px-4 py-2">Leads mission operations & capability planning.</td>
+                <td class="px-4 py-2">Military Commission + Relevant Science Degree</td>
+                <td class="px-4 py-2">Variable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-6">
+          <label for="roleSearch" class="block font-medium mb-2">Search Role:</label>
+          <input id="roleSearch" type="text" placeholder="Type role name..." class="w-full border border-gray-300 rounded-md px-3 py-2" />
+        </div>
+      </section>
+
+      <!-- Quantum Spacecraft Initiative -->
+      <section id="quantum-craft" class="p-8 bg-gray-100 rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Quantum Spacecraft</h2>
+        <p>Superconducting boosters, magnetoplasma sails, and AI-guided trajectory planning.</p>
+      </section>
+
+      <!-- Quantum Train Initiative -->
+      <section id="quantum-train" class="p-8 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-4">Quantum Train</h2>
+        <p>Near-light-speed maglev corridors powered by quantum levitation.</p>
+      </section>
+
+      <!-- Learning Platform -->
+      <section id="learning-platform" class="p-8 bg-gray-100 rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Learning Platform</h2>
+        <p>Interactive modules: quantum theory, propulsion physics, AI development.</p>
+        <button id="startLearning" class="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Start Learning</button>
+      </section>
+
+      <!-- AI Assistant -->
+      <section id="ai" class="p-8 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-4">AI Assistant</h2>
+        <div id="ai-chat" class="h-80 border border-gray-300 rounded-lg p-4 overflow-y-auto bg-gray-50"></div>
+        <div class="mt-4 flex space-x-2">
+          <input id="aiInput" type="text" placeholder="Ask about roles, missions, AI..." class="flex-grow border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <button id="aiSend" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Send</button>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="p-8 bg-gray-200 rounded-lg">
+        <h2 class="text-3xl font-bold mb-4">Contact & Collaboration</h2>
+        <form class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="Your Name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea id="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="Your inquiry or proposal..."></textarea>
+          </div>
+          <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm text-gray-600">
+      © 2025 USAFiO. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Member and ZAFA Modals omitted for brevity -->
+  <script>
+    // Role Search Filter
+    document.getElementById('roleSearch').addEventListener('input', e => {
+      const filter = e.target.value.toLowerCase();
+      document.querySelectorAll('#structure tbody tr').forEach(row => {
+        const role = row.cells[0].textContent.toLowerCase();
+        row.style.display = role.includes(filter) ? '' : 'none';
+      });
+    });
+    // Initialize RevolutionAI Client
+    const ai = new RevolutionAI.Client({
+      element: 'ai-chat',
+      apiKey: 'YOUR_REVOLUTION_AI_API_KEY',
+      model: 'quantum-spacecraft-v1'
+    });
+    document.getElementById('aiSend').addEventListener('click', async () => {
+      const inputEl = document.getElementById('aiInput');
+      const msg = inputEl.value.trim();
+      if (!msg) return;
+      ai.appendUserMessage(msg);
+      inputEl.value = '';
+      try {
+        const reply = await ai.send(msg);
+        ai.appendBotMessage(reply);
+      } catch (err) {
+        ai.appendBotMessage('AI service unavailable.');
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
