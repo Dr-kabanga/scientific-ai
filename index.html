@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+      <script src="script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United States of Africa Organization</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <a href="#" class="flex-shrink-0 flex items-center text-xl font-bold">USAFiO</a>
+          <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+            <a href="#about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-indigo-500">About</a>
+            <a href="#mission" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-indigo-500">Mission</a>
+            <a href="#initiatives" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-indigo-500">Initiatives</a>
+            <a href="#contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-indigo-500">Contact</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button id="loginBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Login</button>
+          <a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-indigo-600 text-white py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl font-extrabold mb-4">United States of Africa Organization</h1>
+      <p class="text-lg">Uniting Nations, Empowering Voices, Building Our Future</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">About Us</h2>
+      <p>The United States of Africa Organization (USAFiO) is a pan-African initiative dedicated to fostering unity, collaboration, and sustainable development across the continent. We aim to amplify African voices on the global stage and drive transformative change.</p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section id="mission" class="bg-gray-100 py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+      <ul class="list-disc ml-6">
+        <li>Promote political and economic integration among African states.</li>
+        <li>Advocate for equitable development and social justice.</li>
+        <li>Strengthen cultural exchange and Pan-African identity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Exclusive Content (Hidden until Login) -->
+  <section id="exclusive" class="py-16 hidden">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Member-Exclusive Content</h2>
+      <p>Welcome, <span id="memberName"></span>! Here you can access policy briefs, research reports, and collaboration tools reserved for our members.</p>
+      <!-- Add member tools and resources here -->
+    </div>
+  </section>
+
+  <!-- Initiatives Section -->
+  <section id="initiatives" class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Key Initiatives</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">Youth Leadership Program</h3>
+          <p>Empowering the next generation of African leaders through training, mentorship, and exchange programs.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">Economic Collaboration Network</h3>
+          <p>Facilitating trade agreements, investment opportunities, and joint ventures among member states.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">Cultural Exchange Forums</h3>
+          <p>Organizing events and platforms that celebrate African heritage, arts, and innovation.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">Policy Advisory Council</h3>
+          <p>Providing research-based policy recommendations to governments and international bodies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-100 py-16">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+      <form class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium">Name</label>
+          <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="Your Name" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium">Message</label>
+          <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md" placeholder="How can we help?"></textarea>
+        </div>
+        <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg overflow-hidden shadow-xl w-full max-w-md">
+      <div class="px-6 py-4">
+        <h2 class="text-xl font-bold mb-4">Member Login</h2>
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label for="emailLogin" class="block text-sm font-medium">Email</label>
+            <input type="email" id="emailLogin" name="email" class="mt-1 block w-full border-gray-300 rounded-md" required />
+          </div>
+          <div>
+            <label for="passwordLogin" class="block text-sm font-medium">Password</label>
+            <input type="password" id="passwordLogin" name="password" class="mt-1 block w-full border-gray-300 rounded-md" required />
+          </div>
+          <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Login</button>
+        </form>
+      </div>
+      <div class="px-6 py-4 text-right">
+        <button id="closeModal" class="text-gray-600 hover:text-gray-800">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-600">
+      © 2025 United States of Africa Organization. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+    const loginForm = document.getElementById('loginForm');
+    const exclusiveSection = document.getElementById('exclusive');
+    const memberName = document.getElementById('memberName');
+
+    loginBtn.addEventListener('click', () => {
+      loginModal.classList.remove('hidden');
+    });
+    closeModal.addEventListener('click', () => {
+      loginModal.classList.add('hidden');
+    });
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TODO: Integrate with backend auth API
+      const email = document.getElementById('emailLogin').value;
+      // Simulate login success
+      memberName.textContent = email.split('@')[0];
+      loginModal.classList.add('hidden');
+      exclusiveSection.classList.remove('hidden');
+      // Hide login button after login
+      loginBtn.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
+<form id="mfaSetupForm">
+  <h3>Enable Authenticator App</h3>
+  <div id="qrcode"></div>
+  <label>Enter code to verify:
+    <input type="text" id="totpCode" maxlength="6" />
+  </label>
+  <button>Activate MFA</button>
+</form>
+<script>
+// 1. Fetch TOTP secret & QR payload from your API
+// 2. Render QR (e.g. using QRCode.js)
+// 3. On submit, POST { code: totpCode } to verify and enable
+</script>
+<!-- OTP Step: hidden by default -->
+<div id="mfaStep" class="hidden">
+  <label for="otp">Authentication Code</label>
+  <input id="otp" type="text" maxlength="6" class="…" />
+  <button id="verifyMfa">Verify & Continue</button>
+</div>
+<script>
+loginForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  // 1. Verify email/password via API
+  // 2. If user has MFA enabled, show #mfaStep and hide password form
+});
+document.getElementById('verifyMfa').addEventListener('click', async () => {
+  const otp = document.getElementById('otp').value;
+  // 3. POST to /api/verify-mfa { otp }
+  // 4. On success, reveal exclusive content
+});
+</script>
