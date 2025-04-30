@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 
 # Placeholder for satellite communication APIs
 SATELLITE_API_URL = "https://api.satellite-provider.com/get-data"
-AUTH_TOKEN = "YOUR_API_AUTH_TOKEN"
+AUTH_TOKEN = "C:\Users\MR ALLAN\OneDrive\Documents\GitHub\scientific-ai"
 
 # Load pre-trained AI models for image/video enhancement
 def load_ai_models():
