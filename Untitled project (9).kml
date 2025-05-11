@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Untitled project</name>
+	<gx:CascadingStyle kml:id="__managed_style_0CFC097C1C37F64CC564">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_07B42FD58037F64CC560">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_09434E21DF37F64CC55F">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_07B42FD58037F64CC560</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0CFC097C1C37F64CC564</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="06EB7ACAB037F64CC4C9">
+		<name>ZAFSA/AIA NAVY SEAL BASE</name>
+		<LookAt>
+			<longitude>40.48040452111239</longitude>
+			<latitude>-12.96359211432961</latitude>
+			<altitude>-0.5167728162300633</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>401.6130977703142</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_09434E21DF37F64CC55F</styleUrl>
+		<Point>
+			<coordinates>40.48060738463533,-12.96343814163952,-0.4620327609141106</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AF0F0BC7837F663F743">
+		<name>ZAFSA/AIA MODERN CITY</name>
+		<LookAt>
+			<longitude>30.7370357253744</longitude>
+			<latitude>-11.64320638042157</latitude>
+			<altitude>1193.462425460343</altitude>
+			<heading>99.15164941509995</heading>
+			<tilt>41.98734456630204</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1235.194624350843</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_09434E21DF37F64CC55F</styleUrl>
+		<Point>
+			<coordinates>30.73473664059029,-11.64545342292137,1197.801124733348</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
