@@ -1,0 +1,13 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = dr allan kabanga
+	email = allankabangaofficial@gmail.com
+[safe]
+	directory = C:/Users/MR ALLAN/OneDrive/Documents/GitHub/quantum-10-AI
+	directory = C:/Users/MR ALLAN/OneDrive/Documents/GitHub/skills-hub
+	directory = C:/Users/MR ALLAN/OneDrive/Documents/GitHub/download
+	directory = C:/Users/MR ALLAN/OneDrive/Documents/GitHub/hello-github-actions
