@@ -1,0 +1,70 @@
+import pandas as pd
+import xml.etree.ElementTree as ET
+
+# Read employee data from CSV file
+employee_data_file = "employee_data.csv"  # Path to the employee CSV file
+df = pd.read_csv(employee_data_file)
+
+# Function to generate payslip in XML format for each employee
+def generate_payslip_xml(data):
+    payslip = ET.Element("Payslip")
+    ET.SubElement(payslip, "EmployeeID").text = str(data['Employee ID'])
+    ET.SubElement(payslip, "Name").text = data['Name']
+    ET.SubElement(payslip, "Position").text = data['Position']
+    ET.SubElement(payslip, "Department").text = data['Department']
+    ET.SubElement(payslip, "Grade").text = data['Grade']
+    
+    # Income Section
+    income = ET.SubElement(payslip, "Income")
+    ET.SubElement(income, "BasicSalary").text = str(data['Basic Salary'])
+    ET.SubElement(income, "HousingAllowance").text = str(data['Housing Allowance'])
+    ET.SubElement(income, "TransportAllowance").text = str(data['Transport Allowance'])
+    ET.SubElement(income, "MedicalAllowance").text = str(data['Medical Allowance'])
+    ET.SubElement(income, "OtherIncome").text = str(data['Other Income'])
+
+    # Deductions Section
+    deductions = ET.SubElement(payslip, "Deductions")
+    ET.SubElement(deductions, "TaxDeduction").text = str(data['Tax Deduction'])
+    ET.SubElement(deductions, "PensionDeduction").text = str(data['Pension Deduction'])
+    ET.SubElement(deductions, "LoanRepayment").text = str(data['Loan Repayment'])
+    ET.SubElement(deductions, "UnionFees").text = str(data['Union Fees'])
+
+    # Net Pay
+    net_pay = ET.SubElement(payslip, "NetPay")
+    net_pay_amount = data['Basic Salary'] + data['Housing Allowance'] + data['Transport Allowance'] + data['Medical Allowance'] + data['Other Income'] - data['Tax Deduction'] - data['Pension Deduction'] - data['Loan Repayment'] - data['Union Fees']
+    ET.SubElement(net_pay, "Amount").text = str(net_pay_amount)
+    
+    # Generate XML file for each employee
+    tree = ET.ElementTree(payslip)
+    tree.write(f"Payslip_{data['Employee ID']}.xml")
+
+# Loop through all employees and generate payslips
+for index, row in df.iterrows():
+    generate_payslip_xml(row)
+
+print("Payslips generated successfully!")
+pip install pandas
+python generate_payslips.py
+<Payslip>
+    <EmployeeID>12345</EmployeeID>
+    <Name>John Doe</Name>
+    <Position>Senior Accountant</Position>
+    <Department>Finance</Department>
+    <Grade>A1</Grade>
+    <Income>
+        <BasicSalary>5000</BasicSalary>
+        <HousingAllowance>1500</HousingAllowance>
+        <TransportAllowance>800</TransportAllowance>
+        <MedicalAllowance>400</MedicalAllowance>
+        <OtherIncome>200</OtherIncome>
+    </Income>
+    <Deductions>
+        <TaxDeduction>600</TaxDeduction>
+        <PensionDeduction>500</PensionDeduction>
+        <LoanRepayment>300</LoanRepayment>
+        <UnionFees>50</UnionFees>
+    </Deductions>
+    <NetPay>
+        <Amount>7000</Amount>
+    </NetPay>
+</Payslip>
