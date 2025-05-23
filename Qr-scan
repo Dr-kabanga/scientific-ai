@@ -1,0 +1,71 @@
+import numpy as np
+
+# Define tokens
+tokens = {
+    'MX9F-7B2K': ('Operations Hub', 'OP-Tier 1'),
+    'QV4Z-3H8D': ('Operations Hub', 'OP-Tier 2'),
+    'JH6L-5C1T': ('Operations Hub', 'OP-Tier 3'),
+    'RT2P-9N4X': ('Operations Hub', 'OP-Tier 4'),
+    'WY8S-0U7Q': ('Operations Hub', 'OP-Tier 5'),
+    'BK3E-6Y5R': ('Research Labs', 'LAB-Tier 1'),
+    'NM1D-2F9P': ('Research Labs', 'LAB-Tier 2'),
+    'VC7A-4K3M': ('Research Labs', 'LAB-Tier 3'),
+    'ZT5W-8L0N': ('Research Labs', 'LAB-Tier 4'),
+    'PY2R-1J6S': ('Research Labs', 'LAB-Tier 5'),
+    'LD9Q-3X7H': ('Command Zone Alpha', 'CMD-Tier 1'),
+    'UF4C-0V2G': ('Command Zone Alpha', 'CMD-Tier 2'),
+    'IK8M-5B9T': ('Command Zone Bravo', 'CMD-Tier 3'),
+    'HS1N-7E4L': ('Command Zone Bravo', 'CMD-Tier 4'),
+    'XR6P-2D8K': ('Command Zone Bravo', 'CMD-Tier 5')
+}
+
+# Simulated decoding method (mocked)
+def simulate_decode_qr(code):
+    # Mock decoding by returning the code directly
+    return code
+
+def scan_qr_simulated(code):
+    decoded_code = simulate_decode_qr(code)
+
+    if decoded_code in tokens:
+        zone, level = tokens[decoded_code]
+    else:
+        zone, level = 'Unknown Zone', 'Unknown Access'
+
+    print(f"\nToken Detected:")
+    print(f"Code: {decoded_code}")
+    print(f"Zone: {zone}")
+    print(f"Access Level: {level}")
+
+# Testing
+if __name__ == '__main__':
+    # Example hardcoded test input
+    test_input_code = 'MX9F-7B2K'
+    scan_qr_simulated(test_input_code)
+
+# Test Cases
+def test_known_token():
+    code = 'MX9F-7B2K'
+    assert tokens[code] == ('Operations Hub', 'OP-Tier 1')
+
+def test_unknown_token():
+    code = 'XXXX-XXXX'
+    assert code not in tokens
+
+def test_token_format():
+    for token in tokens:
+        assert len(token) == 9 and token[4] == '-'
+
+def test_simulated_decode():
+    code = 'BK3E-6Y5R'
+    assert simulate_decode_qr(code) == code
+
+def test_simulated_scan_output():
+    import io
+    import sys
+    captured_output = io.StringIO()
+    sys.stdout = captured_output
+    scan_qr_simulated('LD9Q-3X7H')
+    sys.stdout = sys.__stdout__
+    output = captured_output.getvalue()
+    assert 'Command Zone Alpha' in output and 'CMD-Tier 1' in output
