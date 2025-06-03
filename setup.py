@@ -21,7 +21,7 @@ setup(
         "scipy==1.10.1",
         "scikit-learn==1.2.0",
         "tensorflow==2.12.0",
-        "torch==2.0.1",
+        "torch==2.7.0",
         "matplotlib==3.7.1",
         "seaborn==0.12.2",
         "flask==2.3.2",
