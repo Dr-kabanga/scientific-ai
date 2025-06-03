@@ -25,7 +25,7 @@ setup(
         "matplotlib==3.7.1",
         "seaborn==0.12.2",
         "flask==2.3.2",
-        "django==4.2.1",
+        "django==4.2.21",
         "requests==2.31.0",
         "beautifulsoup4==4.12.2",
         "pytest==7.4.0",
