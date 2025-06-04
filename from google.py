@@ -7,7 +7,7 @@ import openai
 import threading
 
 # Initialize OpenAI API
-openai.api_key = "your_openai_api_key"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize the Google Cloud Text-to-Speech client
 client = texttospeech.TextToSpeechClient()

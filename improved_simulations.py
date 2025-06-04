@@ -3,19 +3,6 @@ from qiskit import QuantumCircuit, Aer, execute
 from qiskit.visualization import plot_histogram
 import numpy as np
 import matplotlib.pyplot as plt
-import subprocess
-import sys
-
-# Function to ensure required libraries are installed
-def ensure_libraries_installed():
-    print("Checking and installing missing libraries...")
-    required_libraries = ["qiskit", "numpy", "matplotlib"]
-    for lib in required_libraries:
-        try:
-            __import__(lib)
-        except ImportError:
-            print(f"Installing {lib}...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
 
 # Quantum State Evolution Example
 def simulate_quantum_state_evolution():
@@ -107,8 +94,7 @@ def simulate_quantum_key_distribution():
 # Main function to execute simulations
 if __name__ == "__main__":
     print("Setting up the environment...")
-    ensure_libraries_installed()
-
+    
     # Run simulations
     simulate_quantum_state_evolution()
     create_and_test_quantum_circuit()

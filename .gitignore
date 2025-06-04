@@ -1,0 +1,28 @@
+# Ignore binary archives and executables
+*.zip
+*.iso
+*.exe
+*.docx
+*.msg
+*.pdf
+*.xlsx
+*.png
+*.webp
+*.kml
+*.mp4
+*.mp3
+*.wav
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Data output
+/data/
+

@@ -5,7 +5,7 @@ from transformers import pipeline
 import openai
 
 # Initialize OpenAI API
-openai.api_key = "your_openai_api_key"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Function to convert text to speech using gTTS
 def text_to_speech_gtts(text, output_file="output.mp3"):

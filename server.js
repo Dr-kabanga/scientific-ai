@@ -51,7 +51,7 @@ app.post('/api/ai/search', async (req, res) => {
       prompt: `Search for npm packages related to: ${query}`,
       max_tokens: 100,
     }, {
-      headers: { Authorization: `Bearer YOUR_OPENAI_API_KEY` },
+        headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
     });
 
     res.json({ success: true, suggestions: response.data.choices[0].text.trim() });

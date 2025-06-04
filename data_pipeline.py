@@ -4,9 +4,11 @@ import os
 from datetime import datetime
 
 # Define constants for data sources
-STOCK_EXCHANGE_API = "https://api.example.com/stock_exchange"
-GOLD_PRICE_API = "https://api.example.com/gold_price"
-INFLATION_DATA_API = "https://api.example.com/inflation_data"
+STOCK_EXCHANGE_API = os.getenv("STOCK_EXCHANGE_API")
+GOLD_PRICE_API = os.getenv("GOLD_PRICE_API")
+INFLATION_DATA_API = os.getenv("INFLATION_DATA_API")
+LUSE_API_ENDPOINT = os.getenv("LUSE_API_ENDPOINT")
+LUSE_API_KEY = os.getenv("LUSE_API_KEY")
 
 # API keys (use environment variables for security)
 STOCK_API_KEY = os.getenv("STOCK_API_KEY")
@@ -38,6 +40,18 @@ def fetch_stock_data():
     else:
         print("Failed to fetch stock data.")
 
+
+
+def fetch_luse_data():
+    """Fetch stock data from Lusaka Stock Exchange."""
+    params = {"api_key": LUSE_API_KEY}
+    data = fetch_data(LUSE_API_ENDPOINT, params)
+    if data:
+        df = pd.DataFrame(data)
+        df.to_csv(os.path.join(DATA_DIR, "luse_stock_data.csv"), index=False)
+        print("LUSE stock data saved.")
+    else:
+        print("Failed to fetch LUSE stock data.")
 def fetch_gold_price_data():
     """Fetch gold price data."""
     params = {"api_key": GOLD_API_KEY}
@@ -85,6 +99,7 @@ def preprocess_data():
 def main():
     print(f"Pipeline started at {datetime.now()}")
     fetch_stock_data()
+    fetch_luse_data()
     fetch_gold_price_data()
     fetch_inflation_data()
     preprocess_data()
