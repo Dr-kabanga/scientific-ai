@@ -7,7 +7,7 @@ from firebase_admin import credentials, db
 import openai
 
 # Initialize OpenAI API
-openai.api_key = "your_openai_api_key"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize Firebase for collaboration
 cred = credentials.Certificate("path/to/your-firebase-credentials.json")
