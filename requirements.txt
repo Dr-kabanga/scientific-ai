@@ -21,3 +21,4 @@ requests==2.31.0      # For making HTTP requests
 beautifulsoup4==4.12.2  # For web scraping (if applicable)
 pytest==7.4.0         # For testing framework
 reportlab==3.6.12  # For PDF generation
+moviepy==2.2.1

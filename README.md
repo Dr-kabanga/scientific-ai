@@ -33,3 +33,12 @@ Ensure these variables are set in your environment before execution.
 
 ## Funeral Operations Toolkit
 Scripts and documents for generating official communications related to a state funeral can be found in `funeral_ops/`.
+
+## Generate Broadcast Video
+Use `movie.py` to create a simple broadcast clip from the funeral script:
+
+```bash
+python movie.py
+```
+
+The output file `ZAFSA_CIRCULAR_BRDCST_LN53.mp4` will be written to the repository root.
