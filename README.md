@@ -30,3 +30,6 @@ Other scripts require API keys as well:
 - `WEATHER_API_KEY` for `weather_dashboard.py`
 
 Ensure these variables are set in your environment before execution.
+
+## Funeral Operations Toolkit
+Scripts and documents for generating official communications related to a state funeral can be found in `funeral_ops/`.
