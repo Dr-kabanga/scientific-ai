@@ -4,9 +4,9 @@ pandas==1.5.3         # For data manipulation and analysis
 scipy==1.10.1         # For scientific computing
 
 # Machine Learning/AI Libraries
-scikit-learn==1.2.0   # For machine learning algorithms
-tensorflow==2.12.0    # For deep learning (you can replace with PyTorch if preferred)
-torch==2.0.1          # For PyTorch (optional)
+scikit-learn==1.5.1   # For machine learning algorithms
+tensorflow==2.12.1    # For deep learning (you can replace with PyTorch if preferred)
+torch==2.7.1          # For PyTorch (optional)
 
 # Visualization
 matplotlib==3.7.1     # For creating static, animated, and interactive visualizations
@@ -14,11 +14,11 @@ seaborn==0.12.2       # For statistical data visualization
 
 # Web Framework (if applicable)
 flask==2.3.2          # For building web applications (optional)
-django==4.2.1         # For building web applications (optional)
+django==4.2.21         # For building web applications (optional)
 
 # Others
-requests==2.31.0      # For making HTTP requests
+requests==2.32.2      # For making HTTP requests
 beautifulsoup4==4.12.2  # For web scraping (if applicable)
 pytest==7.4.0         # For testing framework
-reportlab==3.6.12  # For PDF generation
+reportlab==3.6.13  # For PDF generation
 moviepy==2.2.1
